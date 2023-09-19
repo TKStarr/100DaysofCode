@@ -15,4 +15,4 @@ cost = (bill*(1+tip))/num_people
 cost = round(float(cost), 2)
 print(f"Your share is {cost}")
 
- 
+
