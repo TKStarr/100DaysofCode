@@ -12,5 +12,7 @@ tip = float(input("How much do you want to tip?\n"))
 num_people = float(input("How many people were there?\n"))
 
 cost = (bill*(1+tip))/num_people
-cost = round(float(cost),2)
+cost = round(float(cost), 2)
 print(f"Your share is {cost}")
+
+ 
