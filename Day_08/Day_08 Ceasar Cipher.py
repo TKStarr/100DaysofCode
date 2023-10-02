@@ -8,7 +8,7 @@ shift = int(input("Type the shift number:\n"))
 text_list = list(text)
 text_list_indexed = []
 text_list_indexed_encrypted =[]
-text_list_indexed_encrypted_str = []
+text_str_indexed_encrypted = []
 
 def encrypt(text_code=text_list,shift_amt=shift):
     if direction == "decode":
@@ -21,10 +21,10 @@ def encrypt(text_code=text_list,shift_amt=shift):
     for x in range(0,len(text_list_indexed_encrypted)):  #error checking for when the shift causes the index to go over 26.
         if text_list_indexed_encrypted[x] > 26:
             text_list_indexed_encrypted[x] = text_list_indexed_encrypted[x] - 26
-        text_list_indexed_encrypted_str.append(alphabet[text_list_indexed_encrypted[x]])  #converting the list back into a string.
+        text_str_indexed_encrypted.append(alphabet[text_list_indexed_encrypted[x]])  #converting the list back into a string.
 
 encrypt(text, shift)
 
-encrypted_code = ''.join(text_list_indexed_encrypted_str)
+encrypted_code = ''.join(text_str_indexed_encrypted)
 
 print(encrypted_code)
