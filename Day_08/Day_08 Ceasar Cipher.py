@@ -1,4 +1,4 @@
-alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ']
 
 direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
 text = input("Type your message:\n").lower()
@@ -20,8 +20,8 @@ def encrypt(text_code=text,shift_amt=shift):
         text_list_indexed_encrypted.append(shift_amt + alphabet.index(text_code[char])) # shift the index by the shift amount.
 
     for x in range(0,len(text_list_indexed_encrypted)):  #error checking for when the shift causes the index to go over 26.
-        if text_list_indexed_encrypted[x] > 25:
-            text_list_indexed_encrypted[x] = text_list_indexed_encrypted[x] - 26
+        if text_list_indexed_encrypted[x] > 26:
+            text_list_indexed_encrypted[x] = text_list_indexed_encrypted[x] - 27
         text_str_indexed_encrypted.append(alphabet[text_list_indexed_encrypted[x]])  #converting the list back into a string.
 
 encrypt(text, shift)
