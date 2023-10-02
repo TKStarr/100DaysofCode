@@ -9,6 +9,7 @@ text_list = list(text)
 text_list_indexed = []
 text_list_indexed_encrypted =[]
 text_list_indexed_encrypted_str = []
+
 def encrypt(text_code=text_list,shift_amt=shift):
     if direction == "decode":
         shift_amt = -shift_amt
