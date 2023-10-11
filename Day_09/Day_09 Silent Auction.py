@@ -26,4 +26,4 @@ winning_bid_amount = max_bid_dict['amount']
 winning_bidder = max_bid_dict['bidder']
 
 # print winning bidder
-print(f'The winner is {winning_bidder} with a bid of {winning_bid_amount}!')
+print(f'The winner is {winning_bidder} with a bid of ${winning_bid_amount}!')
