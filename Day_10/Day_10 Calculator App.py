@@ -25,9 +25,9 @@ operators = {
 running = True
 n1 = int(input("What is the first number?"))
 while running == True:
-    funct = input("What is the function? \n+\n-\n*\n/\n")
-    n2 = int(input("What is the second number?"))
-    funct = operators[funct]
+    functions = input("Pick a function: \n+\n-\n*\n/\n")
+    n2 = int(input("What is the next number?"))
+    funct = operators[functions]
 
 
     if funct == add:
@@ -42,7 +42,7 @@ while running == True:
     else:
         output = divide(n1,n2)
 
-    print(output)
+    print(f"{n1} {functions} {n2} = {output}")
 
     keep_going = input("Do you want to calculate anything else? y/n")
 
