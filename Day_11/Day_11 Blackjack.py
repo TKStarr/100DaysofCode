@@ -55,7 +55,6 @@ while keep_playing == "y":
     computer_score = calculate_score(computer_cards)
     hit = True
     bet_amount = int(input("How much would you like to bet?"))
-    #total_winnings = 0
 
     while user_score < 22 and hit == True:
         user_score = calculate_score(user_cards)
@@ -86,7 +85,7 @@ while keep_playing == "y":
     if user_score > 21:
         print(f"Your score is {user_score}")
         print("Busted!  You lose")
-        computer_wins = computer_wins +1
+        computer_wins = computer_wins + 1
         total_winnings = total_winnings - bet_amount
     elif user_score == 21:
         print(f"Your score is {user_score}")
