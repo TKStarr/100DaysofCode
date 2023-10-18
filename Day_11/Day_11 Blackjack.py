@@ -42,8 +42,10 @@ user_wins = 0
 computer_wins = 0
 bet_amount = 0
 total_winnings = 0
+games_played = 0
 
 while keep_playing == "y":
+    games_played = games_played + 1
     # initial card deal
     user_cards = []
     computer_cards = []
@@ -56,7 +58,7 @@ while keep_playing == "y":
     hit = True
     bet_amount = int(input("How much would you like to bet?"))
 
-    while user_score < 22 and hit == True:
+    while user_score < 21 and hit == True:
         user_score = calculate_score(user_cards)
         computer_score = calculate_score(computer_cards)
 
@@ -65,6 +67,7 @@ while keep_playing == "y":
         print(f"The dealer's first card is {computer_cards[0]}.")
         if user_score == 21:
             hit = False
+            hit_or_stay = "n"
 
         if hit == True:
             hit_or_stay = input("Would you like to hit? (y/n)")
@@ -76,6 +79,7 @@ while keep_playing == "y":
         else:
             hit = False
 
+    # Dealer is required to keep hitting while score is below 17.
     while computer_score < 17 and user_score < 21:
         computer_cards.append(deal_card())
         computer_score = calculate_score(computer_cards)
@@ -98,6 +102,8 @@ while keep_playing == "y":
         print("You win!")
         user_wins = user_wins + 1
         total_winnings = total_winnings + bet_amount
+    elif user_score == computer_score:
+        print("Push.  No winnings or loss.")
     elif user_score >= computer_score:
         print(f"Your score is {user_score}")
         print(f"The dealer's score is {computer_score}")
@@ -119,6 +125,8 @@ while keep_playing == "y":
 
 if total_winnings > 0:
     print(f"Congrats!  You are walking away with ${total_winnings}!")
+elif total_winnings == 0:
+    print("Please come back soon.")
 else:
     print("Better luck next time.")
 
