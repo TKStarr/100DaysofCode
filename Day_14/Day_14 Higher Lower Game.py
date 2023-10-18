@@ -14,7 +14,9 @@ while try_again == 'y':
     while count_wrong == 0:
         A = gd.data[rd.randint(0, 49)]
         B = gd.data[rd.randint(0, 49)]
-        # TODO make sure that A and B aren't the same
+        while A['name'] == B['name']:
+            B = gd.data[rd.randint(0, 49)]
+
 
         A_followers = A['follower_count']
         B_followers = B['follower_count']
@@ -44,5 +46,6 @@ while try_again == 'y':
 
     if try_again == 'y':
         count_wrong = 0
+        score = 0
     else:
         print(f"Your highest score is {max(final_scores)}")
