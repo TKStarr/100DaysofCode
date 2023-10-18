@@ -48,4 +48,5 @@ while try_again == 'y':
         count_wrong = 0
         score = 0
     else:
+
         print(f"Your highest score is {max(final_scores)}")
